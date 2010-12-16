@@ -11,6 +11,11 @@ class ConnectionTest < Test::Unit::TestCase
     assert_kind_of Net::HTTP, connection.http
   end
   
+  def test_verify_certificate_is_enabled
+    connection = Connection.new(keys.merge(:use_ssl => true))
+    assert_equal connection.http.verify_mode, OpenSSL::SSL::VERIFY_PEER
+  end
+
   def test_use_ssl_option_is_set_in_connection
     connection = Connection.new(keys.merge(:use_ssl => true))
     assert connection.http.use_ssl?
