@@ -99,6 +99,7 @@ module AWS
         def create_connection
           http             = http_class.new(options[:server], options[:port])
           http.use_ssl     = !options[:use_ssl].nil? || options[:port] == 443
+          http.ca_file     = OpenSSL::X509::DEFAULT_CERT_FILE
           http.verify_mode = OpenSSL::SSL::VERIFY_PEER
           http
         end
