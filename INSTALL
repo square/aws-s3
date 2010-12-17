@@ -53,3 +53,4 @@ AWS::S3 also depends on the Builder library (http://builder.rubyforge.org/ and h
 === Content type inference (mime-types)
 
 AWS::S3 depends on the MIME::Types library (http://mime-types.rubyforge.org/) to infer the content type of an object that does not explicitly specify it. This library will automatically be installed for you when using Rubygems.
+
