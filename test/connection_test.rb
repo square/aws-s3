@@ -13,6 +13,7 @@ class ConnectionTest < Test::Unit::TestCase
   
   def test_verify_certificate_is_enabled
     connection = Connection.new(keys.merge(:use_ssl => true))
+    assert_equal connection.http.ca_file, OpenSSL::X509::DEFAULT_CERT_FILE
     assert_equal connection.http.verify_mode, OpenSSL::SSL::VERIFY_PEER
   end
 
