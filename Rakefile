@@ -64,7 +64,6 @@ namespace :dist do
     s.description       = s.summary
     s.email             = 'marcel@vernix.org'
     s.author            = 'Marcel Molina Jr.'
-    s.has_rdoc          = true
     s.extra_rdoc_files  = %w(README COPYING INSTALL)
     s.homepage          = 'http://amazon.rubyforge.org'
     s.rubyforge_project = 'amazon'
