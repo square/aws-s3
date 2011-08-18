@@ -199,6 +199,9 @@ module AWS
           def establish_connection!(options = {})
             # After you've already established the default connection, just specify 
             # the difference for subsequent connections
+            Rails.logger.warn("CONNECTING TO S3!!!!!!!!!!!!!")
+            Rails.logger.warn("called from:")
+            Rails.logger.warn(caller.inspect)
             options = default_connection.options.merge(options) if connected?
             connections[connection_name] = Connection.connect(options)
           end
